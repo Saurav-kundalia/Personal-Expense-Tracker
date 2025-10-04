@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <h1>💰 Personal Expense Tracker</h1>
+
+  <!-- Add/Edit Form -->
+  <form id="expenseForm">
+    <input type="number" id="amount" placeholder="Amount" required>
+    <input type="date" id="date" required>
+    <input type="text" id="note" placeholder="Note">
+    <input type="text" id="category" placeholder="Category">
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <!-- Filters -->
+  <h2>Filter Expenses</h2>
+  <input type="text" id="filterCategory" placeholder="Category">
+  <input type="date" id="startDate">
+  <input type="date" id="endDate">
+  <button onclick="applyFilter()">Apply Filter</button>
+  <button onclick="clearFilter()">Clear Filter</button>
+
+  <!-- Expenses Table -->
+  <h2>All Expenses</h2>
+  <table id="expenseTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Note</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Reports -->
+  <h2>Reports</h2>
+  <div id="reportCategory"></div>
+  <div id="reportMonth"></div>
+
+<!-- Download PDF -->
+<div class="download-btn">
+  <button onclick="downloadPDF()">Download PDF</button>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
